@@ -29,7 +29,7 @@ gulp serve
 gulp serve:test
 ```
 
-To check the final exercise go to:
+To check the production version of the exercise go to:
 
 <a href="http://davidlampon.github.io/marfeel-charts/prod/index.html">http://davidlampon.github.io/marfeel-charts/prod/index.html</a>
 
@@ -53,10 +53,10 @@ Development time: 9 hours - Total invested time: 12 hours
 * Very low exposure to Jasmine and TDD
 
 ### <a name="considerations"></a>Considerations
-* Layout and spacing has been measured taking a screenshot of the pdf at 100% zoom and measuring in Photoshop with rules and the marquee tool. 
-* BEM CSS naming has been used. Three different sass files have been used: reset (to normalize all browsers), base (for the non chart page specifics) and marfeelCharts (for all chart specifics).
-* The font of the exercise was not specified and although it doesn't match helvetica perfectly this is the chosen font for development (along with its sans fallbacks).
-* The same data has been used to render the three area charts. If there's any interest in seeing it differently it can be modified in the model file directly.
+* Layout and spacing has been measured taking a screenshot of the pdf at 100% zoom and measuring in Photoshop with rulers and the marquee tool. 
+* BEM CSS naming has been used. Three different sass files have been used: reset (to normalize all browsers), base (for the non chart specifics) and marfeelCharts (for all chart specifics).
+* The font to be use was not specified and although helvetica doesn't match perfectly it is the chosen font for development (along with its sans fallbacks).
+* The same data models have been used to render the three area charts. If there's any interest in seeing diferences among them they can be modified in the model file directly.
 
 ### <a name="development_proces"></a>Development process
 
@@ -66,23 +66,23 @@ Unit testing has been implemented to show that the Jasmine workflow is known and
 
 ##### Good architectural practices 
 
-I faced the option of developing raw code or using a Yeoman generator for a Frontend application. As I'm used to the gulp tasks, sass compilation and browser auto reload I preferred this approach although I knew it would be more work to setup. Folder structure is the generally accepted although the distribution folder is not present on the repository. 
+I faced the decission of developing with raw files or using a Yeoman generator for a Frontend application. As I'm used to the gulp tasks, sass compilation and browser auto reload I preferred this approach although I knew it would be more work to setup. Folder structure is the generally accepted. 
 
 ##### Clean HTML and CSS markup 
 
-Yeoman generator sets up the html5 boilerplate and I've tried to present the code in the more logical, clear and readable way. BEM naming conventions have been used to make the reading of the style sheet straightforward. For the € units an after css element has been used.
+Yeoman generator sets up the html5 boilerplate which is an standard and I've tried to present the code in the more logical, clear and readable way. BEM naming conventions have been used to make the reading of the style sheet straightforward. For the € units an after css element has been used.
 
 ##### Produce a reusable component (View) connected to 3 different data models. 
 
-The view loads a html chunk as a template that is hidden by a class that we remove, customise with the data model values and insert in the base container in the html. It displays properly the three different data objects styling each one of them thanks to the additional classes added to each one of them.
+The view loads a html chunk as a template that is hidden by a class that we remove with JS, customise with the data model values and insert back in the base container in the html. It displays properly the three different data objects styling each one of them thanks to the additional classes.
 
 ##### Produce a reliable and unit tested code (we recommend Jasmine). 
 
-Used but not in depth. I didn't with a interesting way of testing any of the d3js related functions. I just tried my best to come with useful unit tests because as I said unfortunately I have very low exposure to TDD.
+Used but not in depth. I didn't find an good way to test any of the d3js related functions. I just tried my best to come with useful unit tests because, as I said, unfortunately I have very low exposure to TDD.
 
 ##### There’s a clear MVC separation of concerns. In order to do that, you will need a dependency management tool (we recommend you to use RequireJS). 
 
-Used on the controller to introduce as dependencies D3js, the data model and the view. Model is the data object from which we get the representation values and View all the functions that interact with the final html as input or output. The controller acts and communicates between them.
+Used on the controller to introduce as dependencies D3js, the data model and the view. Model is the data object from which we get the representation values and View contain all the functions that interact with the final html as input or output. The controller acts and communicates between them.
 
 ##### Pixel accuracy reproducing designs 
 
@@ -90,15 +90,15 @@ As far as I can tell distances are exactly as the ones in the delivered exercise
 
 ##### Good use of libraries 
 
-No additional libraries have been used although it was taken in account handlebars / moustache.
+No additional libraries have been used although I though about using handlebars / moustache as the templating system.
 
 ##### Good use of pure Javascript language. 
 
-Done.
+Done. I hope.
 
-##### We encourage the usage of graphic library. Eg: D3JS library 
+##### We encourage the usage of graphic library. Eg: D3JS library 
 
-Used D3.js as a dependency of the controller with RequireJS (no previous experience)
+Used D3.js as a dependency of the controller with RequireJS (no previous experience).
 
 ##### Don’t use external frameworks like jQuery, AngularJS or React JS. 
 
@@ -106,7 +106,7 @@ None used.
 
 ##### Avoid any backend development / dependency. Create a mocked communication with a fake server. 
 
-The mocked communication was not implemented at all. I just created a JS file as the data model to be included as dependency for the controller with RequireJS. 
+No mocked communication was implemented at all. I just created a JS file as the data model to be included as dependency for the controller with RequireJS. 
 
 ### <a name="account"></a>Taken in account but not implemented
 * Javascript config object to store all hardcoded classes and reuse them with variables.
@@ -114,12 +114,12 @@ The mocked communication was not implemented at all. I just created a JS file as
 * Modernizr has been included with the intention of presenting an error page in case JS was disabled.
 * Different breakpoint layouts were initially planned to be implemented to fix the layout position of the three charts that breaks below 1200px to line them up appropriately. 
 * HTML5 semantic html. Developed exercised is basically html4 with <svg> tags. Some improvements could be made with template, figure and figcaption tags. 
-* CSS concatenation and minifcation and JS concatenation and uglyfication to reduce size and http requests on load (some gulp task error).
-* Three situations were to be presented: inmediate load of the data (from the JSOn object), delayed load of the data to mimic the ajax request with a time out showing a spinner while loading and a final case with an error of communication or data corruption of the ajax request.
+* CSS concatenation and minifcation and JS concatenation and uglyfication to reduce size and http requests on load (not possible due to some gulp task error).
+* Three situations were to be presented: inmediate load of the data (from the json object), delayed load of the data to mimic the ajax request with a time out showing a spinner while loading and a final case with an error of communication or data corruption of the ajax request (displaying an error message).
 
 ### <a name="flaws"></a>Flaws
-* Project: the gulp taks that is generating the distribution build is not copying the JS files. No time to find the problem, out of the scope of the exercise.
-* Visual: Top line of are graph inside the chart has no different color than the fill. Didn't find a way to do so for area graphs, maybe with a vertical line graphs there would be options to do it.
+* Project: the gulp taks that is generating the distribution build is not copying the JS files. A semi prod version has been uploaded to the repo for online reviewing purposes. No time to find the problem, out of the scope of the exercise.
+* Visual: Top line of the area graphs inside the chart has no different color than the fill. Didn't find a way to do so for area graphs, maybe with a vertical line graphs there would be options to do it.
 * Javascript: some Eslint errors mainly because syntax and spacing and the module bundling of RequireJS.
 * W3C validation not checked.
 
