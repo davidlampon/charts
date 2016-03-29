@@ -35,7 +35,7 @@ To check the final exercise go to:
 
 ### <a name="presentation"></a>Presentation
 
-This exercise has been developed with Atom on Chrome and the result has been tested on Firefox and Internet Explorer 11. This exercise has been developed in an approximate time of 12-14 hours. Although the recommended time to do it was stated in 8 hours, many factors have increased the development time.
+This exercise has been developed with Atom on Chrome and the result has been tested on Firefox and Internet Explorer 11. This exercise has been developed in an approximate time of 12 hours. Although the recommended time to do it was stated in 8 hours, many factors have increased the development time.
 
 ### <a name="time_used"></a>Time used (approximate times)
 * Understanding of the exercise and planning: 1.5h (offline)
@@ -46,7 +46,8 @@ This exercise has been developed with Atom on Chrome and the result has been tes
 * Validation, testing and refactoring: 1.5h
 * Documentation and repository setup: 1.5h
 
-Total invested time: 12-14 hours
+Development time: 9 hours
+Total invested time: 12 hours
 
 ### <a name="personal_handycaps"></a>Personal handycaps
 * No previous knowledge of D3.JS or RequireJS (only WebPack and SystemJS)
@@ -55,7 +56,7 @@ Total invested time: 12-14 hours
 ### <a name="considerations"></a>Considerations
 * Layout and spacing has been measured taking a screenshot of the pdf at 100% zoom and measuring in Photoshop with rules and the marquee tool. 
 * BEM CSS naming has been used. Three different sass files have been used: reset (to normalize all browsers), base (for the non chart page specifics) and marfeelCharts (for all chart specifics).
-* The font of the exercise was not specified and although it doens't match helvetica perfectly this is the chosen font for development (along whith its sans fallbacks).
+* The font of the exercise was not specified and although it doesn't match helvetica perfectly this is the chosen font for development (along with its sans fallbacks).
 * The same data has been used to render the three area charts. If there's any interest in seeing it differently it can be modified in the model file directly.
 
 ### <a name="development_proces"></a>Development process
@@ -70,7 +71,7 @@ I faced the option of developing raw code or using a Yeoman generator for a Fron
 
 ##### Clean HTML and CSS markup 
 
-Yeoman generator sets up the html5 boilerplate and I've tried to present the code in the more logical, clear and readable way. BEM naming conventions have been used to make the reading of the stylesheet straight forward. For the € units an after css element has been used.
+Yeoman generator sets up the html5 boilerplate and I've tried to present the code in the more logical, clear and readable way. BEM naming conventions have been used to make the reading of the style sheet straightforward. For the € units an after css element has been used.
 
 ##### Produce a reusable component (View) connected to 3 different data models. 
 
@@ -125,4 +126,4 @@ The mocked communication was not implemented at all. I just created a JS file as
 
 ### <a name="impressive"></a>Not required, but impressive
 
-A carrousel built form scratch would take around 3-4 hours of development which is completely out of the time window suggested for the development of the exercise. 
+A carrousel built form scratch would take around 3-4 hours of development, which is completely out of the time window suggested for the development of the exercise. 
