@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marfeel charts</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/marfeelCharts.css">
+
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+
+  <script data-main="scripts/marfeel" src="scripts/require.js"></script>
+</head>
+
+<body>
+  <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <div class="marfeelCharts__chart marfeelCharts__chart--template">
+    <div class="marfeelCharts__svgGroup">
+      <svg class="marfeelCharts__donut">
+        <g transform="translate(152,0)">
+          <line x1="0" y1="10" x2="0" y2="174" class="marfeelCharts--tablet" />
+          <line x1="-82" y1="92" x2="82" y2="92" class="marfeelCharts--tablet" />
+        </g>
+      </svg>
+      <div class="marfeelCharts__areaMask">
+        <svg class="marfeelCharts__area"></svg>
+      </div>
+    </div>
+    <div class="marfeelCharts__title">
+      <h2 class="marfeelCharts__titleName"></h2>
+      <p class="marfeelCharts__titleAmount"></p>
+    </div>
+    <div class="marfeelCharts__legend">
+      <div class="marfeelCharts__legendTablet">
+        <h3 class="marfeelCharts--tablet">Tablet</h3>
+        <p><span class="marfeelCharts__legendPercentage"></span><span class="marfeelCharts__legendTotal"></span></p>
+      </div>
+      <div class="marfeelCharts__legendSmartphone">
+        <h3 class="marfeelCharts--smartphone">Smartphone</h3>
+        <p><span class="marfeelCharts__legendPercentage"></span><span class="marfeelCharts__legendTotal"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="marfeelCharts__base"></div>
+</body>
+
+</html>

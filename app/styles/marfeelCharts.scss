@@ -1,0 +1,176 @@
+.marfeelCharts {
+
+  &__base {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 100px auto 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__chart {
+    position: relative;
+    display: inline-block;
+    border-bottom: 3px solid #e5e5e5;
+
+    & ~ & {
+      margin-left: 88px;
+    }
+
+    &--template {
+      display: none;
+    }
+
+    &--revenue {
+      .marfeelCharts--smartphone {
+        fill: #17660f;
+        color: #17660f;
+        stroke: #17660f;
+        stroke-width:1;
+      }
+      .marfeelCharts--tablet {
+        fill: #5ed52d;
+        color: #5ed52d;
+        stroke: #5ed52d;
+        stroke-width:1;
+      }
+      .marfeelCharts__areaFill {
+          fill: #ceecc0;
+      }
+    }
+
+    &--impressions {
+      .marfeelCharts--smartphone {
+        fill: #0f5266;
+        color: #0f5266;
+        stroke: #0f5266;
+        stroke-width:1;
+      }
+      .marfeelCharts--tablet {
+        fill: #00cbde;
+        color: #00cbde;
+        stroke: #00cbde;
+        stroke-width:1;
+      }
+      .marfeelCharts__areaFill {
+          fill: #c1eaf9;
+      }
+    }
+
+    &--visits {
+      .marfeelCharts--smartphone {
+        fill: #e15a28;
+        color: #e15a28;
+        stroke: #e15a28;
+        stroke-width:1;
+      }
+      .marfeelCharts--tablet {
+        fill: #ffc42d;
+        color: #ffc42d;
+        stroke: #ffc42d;
+        stroke-width:1;
+      }
+      .marfeelCharts__areaFill {
+          fill: #fcebb8;
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 58px;
+    width: 150px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &__titleName {
+    font-size: 16px;
+    color: #a7a7a7;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  &__titleAmount {
+    font-size: 22px;
+    color: #383838;
+
+    .marfeelCharts__chart--revenue & {
+        &:after {
+          content: '\20AC';
+        }
+    }
+  }
+
+  &__svgGroup {
+    position: relative;
+  }
+
+  &__donut {
+    display: block;
+    width: 304px;
+    height: 184px;
+    margin-bottom: 5px;
+  }
+
+  &__area {
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__areaMask {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    background-color: #fafafa;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  &__legend {
+    font-size: 14px;
+    margin-bottom: 14px;
+
+    h3 {
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    &Percentage {
+      color: #494949;
+
+      &:after {
+        content: '\0025';
+      }
+    }
+
+    &Total {
+      color: #959595;
+      margin-left: 12px;
+
+      .marfeelCharts__chart--revenue & {
+          &:after {
+            content: '\20AC';
+          }
+      }
+    }
+  }
+
+  &__legendTablet {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+
+  &__legendSmartphone {
+    width: 50%;
+    margin-left: 50%;
+    text-align: right;
+  }
+}
