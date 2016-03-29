@@ -46,8 +46,7 @@ This exercise has been developed with Atom on Chrome and the result has been tes
 * Validation, testing and refactoring: 1.5h
 * Documentation and repository setup: 1.5h
 
-Development time: 9 hours
-Total invested time: 12 hours
+Development time: 9 hours - Total invested time: 12 hours
 
 ### <a name="personal_handycaps"></a>Personal handycaps
 * No previous knowledge of D3.JS or RequireJS (only WebPack and SystemJS)
