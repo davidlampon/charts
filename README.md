@@ -56,6 +56,7 @@ Total invested time: 12-14 hours
 * Layout and spacing has been measured taking a screenshot of the pdf at 100% zoom and measuring in Photoshop with rules and the marquee tool. 
 * BEM CSS naming has been used. Three different sass files have been used: reset (to normalize all browsers), base (for the non chart page specifics) and marfeelCharts (for all chart specifics).
 * The font of the exercise was not specified and although it doens't match helvetica perfectly this is the chosen font for development (along whith its sans fallbacks).
+* The same data has been used to render the three area charts. If there's any interest in seeing it differently it can be modified in the model file directly.
 
 ### <a name="development_proces"></a>Development process
 
