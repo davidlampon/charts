@@ -13,7 +13,7 @@ Marfeel Javascript Test (JS / Frontend Development)
 
 ### <a name="instructions"></a>Instructions
 
-To check the project development environment
+To check the project development environment:
 
 ```
 git clone git@github.com:davidlampon/marfeel-charts.git
@@ -22,7 +22,7 @@ npm install
 bower install
 ```
 
-Please follow the instructions on the <a href="https://github.com/yeoman/generator-webapp">yeoman generator page</a> to install additional dependencies and to be able to launch the development environment as well as the jasmine test suite.
+Please follow the instructions on the <a href="https://github.com/yeoman/generator-webapp">yeoman generator page</a> to install additional dependencies. To launch the development environment as well as the jasmine test suite:
 
 ```
 gulp serve
