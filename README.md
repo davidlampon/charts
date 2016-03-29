@@ -19,12 +19,19 @@ To check the project development environment
 git clone git@github.com:davidlampon/marfeel-charts.git
 cd marfeel-charts
 npm install
-
+bower install
 ```
 
-To check the final exercise
+Please follow the instructions on the <a href="https://github.com/yeoman/generator-webapp">yeoman generator page</a> to install additional dependencies and to be able to launch the development environment as well as the jasmine test suite.
 
+```
+gulp serve
+gulp serve:test
+```
 
+To check the final exercise go to:
+
+<a href="http://davidlampon.github.io/marfeel-charts/prod/index.html">http://davidlampon.github.io/marfeel-charts/prod/index.html</a>
 
 ### <a name="presentation"></a>Presentation
 
