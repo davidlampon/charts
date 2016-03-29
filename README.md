@@ -35,7 +35,7 @@ To check the final exercise go to:
 
 ### <a name="presentation"></a>Presentation
 
-This exercise has been developed with Atom on Chrome and the result has been tested on Firefox and Internet Explorer 11. This exercise has been developed in an approximate time of 12 hours. Although the recommended time to do it was stated in 8 hours, many factors have increased the development time.
+This exercise has been developed with Atom on Chrome and the result has been tested on Firefox and Internet Explorer 11. The time spent in development is approximate 12 hours, although the recommended time to do it was stated in 8 hours, many factors have increased the development time.
 
 ### <a name="time_used"></a>Time used (approximate times)
 * Understanding of the exercise and planning: 1.5h (offline)
