@@ -13,9 +13,18 @@ Marfeel Javascript Test (JS / Frontend Development)
 
 ### <a name="instructions"></a>Instructions
 
+To check the project development environment
+
 ```
 git clone git@github.com:davidlampon/marfeel-charts.git
+cd marfeel-charts
+npm install
+
 ```
+
+To check the final exercise
+
+
 
 ### <a name="presentation"></a>Presentation
 
