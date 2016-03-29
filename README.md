@@ -19,12 +19,19 @@ To check the project development environment
 git clone git@github.com:davidlampon/marfeel-charts.git
 cd marfeel-charts
 npm install
-
+bower install
 ```
 
-To check the final exercise
+Please follow the instructions on the <a href="https://github.com/yeoman/generator-webapp">yeoman generator page</a> to install additional dependencies and to be able to launch the development environment as well as the jasmine test suite.
 
+```
+gulp serve
+gulp serve:test
+```
 
+To check the final exercise go to:
+
+<a href="http://davidlampon.github.io/marfeel-charts/prod/index.html">http://davidlampon.github.io/marfeel-charts/prod/index.html</a>
 
 ### <a name="presentation"></a>Presentation
 
@@ -49,6 +56,7 @@ Total invested time: 12-14 hours
 * Layout and spacing has been measured taking a screenshot of the pdf at 100% zoom and measuring in Photoshop with rules and the marquee tool. 
 * BEM CSS naming has been used. Three different sass files have been used: reset (to normalize all browsers), base (for the non chart page specifics) and marfeelCharts (for all chart specifics).
 * The font of the exercise was not specified and although it doens't match helvetica perfectly this is the chosen font for development (along whith its sans fallbacks).
+* The same data has been used to render the three area charts. If there's any interest in seeing it differently it can be modified in the model file directly.
 
 ### <a name="development_proces"></a>Development process
 
