@@ -2,6 +2,7 @@
 Marfeel Javascript Test (JS / Frontend Development)
 
 * [Presentation](#presentation)
+* [Instructions](#instructions)
 * [Time used handycaps](#time_used)
 * [Personal handycaps](#personal_handycaps)
 * [Considerations](#considerations)
@@ -9,6 +10,12 @@ Marfeel Javascript Test (JS / Frontend Development)
 * [Taken in account but not implemented](#account)
 * [Flaws](#flaws)
 * [Not required but impressive](#impressive)
+
+### <a name="instructions"></a>Instructions
+
+```
+git clone git@github.com:davidlampon/marfeel-charts.git
+```
 
 ### <a name="presentation"></a>Presentation
 
