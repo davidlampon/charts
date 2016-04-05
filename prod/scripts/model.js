@@ -1,7 +1,4 @@
-// define(function() {
-
-function getData() {
-
+define(function() {
   var data = [{
     title: 'revenue',
     total: 200000,
@@ -187,5 +184,7 @@ function getData() {
     ]
   }];
 
-  return data;
-};
+  return {
+    data : data
+  }
+});

@@ -20,8 +20,12 @@
     it('should return the template', function() {
       expect(getTemplate()).not.toBe(undefined);
     });
+  });
+
+  // common
+  describe('Common', function() {
     it('should return the formated number', function() {
-      expect(numberFormat(10000000)).toBe("10.000.000");
+      expect(common.numberFormat(10000000)).toBe("10.000.000");
     });
   });
 
