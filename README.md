@@ -125,4 +125,4 @@ No mocked communication was implemented at all. I just created a JS file as the 
 
 ### <a name="impressive"></a>Not required, but impressive
 
-A carrousel built form scratch would take around 3-4 hours of development, which is completely out of the time window suggested for the development of the exercise.
+A carrousel built form scratch would take around 3-4 hours of development, which is completely out of the time window suggested for the development of the exercise. 
