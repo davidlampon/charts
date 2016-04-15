@@ -1,7 +1,7 @@
 requirejs.config({
     shim: {
         'view': {
-            deps: ['vendor/d3'], 
+            deps: ['vendor/d3'],
             exports: 'view'
         }
     }

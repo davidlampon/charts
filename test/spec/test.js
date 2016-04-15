@@ -1,24 +1,13 @@
-(function() {
-  'use strict';
+define(['../../scripts/model', '../../scripts/common'], function(model, common) {
 
   // model
   describe('Data model', function() {
     it('should exist', function() {
-      expect(getData()).not.toEqual(undefined);
+      expect(model.getData()).not.toEqual(undefined);
     });
 
     it('should be a json object', function() {
-      expect(getData()).toEqual(jasmine.any(Object));
-    });
-  });
-
-  // view
-  describe('View', function() {
-    it('should return the main container', function() {
-      expect(getBaseContainer()).not.toBe(undefined);
-    });
-    it('should return the template', function() {
-      expect(getTemplate()).not.toBe(undefined);
+      expect(model.getData()).toEqual(jasmine.any(Object));
     });
   });
 
@@ -29,4 +18,4 @@
     });
   });
 
-})();
+});
