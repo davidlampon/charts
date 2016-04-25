@@ -184,7 +184,7 @@ define(function() {
     ]
   }];
 
-  var getData = function() {
+  function getData() {
     return data;
   }
 

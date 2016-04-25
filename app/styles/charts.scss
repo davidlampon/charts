@@ -1,4 +1,4 @@
-.marfeelCharts {
+.charts {
 
   &__base {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -131,6 +131,7 @@
     right: 0;
     margin: auto;
     overflow: hidden;
+    z-index: 0;
   }
 
   &__legend {
