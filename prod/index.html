@@ -5,21 +5,37 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marfeel charts</title>
+  <title>Charts project</title>
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/marfeelCharts.css">
+  <link rel="stylesheet" href="styles/charts.css">
+  <link rel="stylesheet" href="styles/map.css">
+  <link rel="stylesheet" href="styles/gallery.css">
 
-  <script data-main="scripts/marfeel" src="scripts/require.js"></script>
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+
+  <!--  slick carrousel -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css" />
+
+  <!--  slick carrousel -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBIn0yvwIuO2P8wV3LjE5cQUz3kfEy8kA&callback=initMap"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBIn0yvwIuO2P8wV3LjE5cQUz3kfEy8kA"></script>
+  <script data-main="scripts/main" src="scripts/require.js"></script>
 </head>
 
 <body>
   <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+  <div class="gallery__base"><div class="gallery__container"></div></div><div class="map__base"></div>
 
   <div class="marfeelCharts__chart marfeelCharts__chart--template">
     <div class="marfeelCharts__svgGroup">
@@ -50,6 +66,14 @@
   </div>
 
   <div class="marfeelCharts__base"></div>
+
+  <!-- <script type="text/javascript">
+    $(document).ready(function() {
+      $('.gallery__base').slick({
+        dots: true
+      });
+    });
+  </script> -->
 </body>
 
 </html>

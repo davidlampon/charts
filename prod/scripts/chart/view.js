@@ -1,4 +1,4 @@
-define(['common'], function(common) {
+define(['common', 'vendor/d3'], function(common, d3) {
 
   function getBaseContainer() {
     return document.querySelector('.marfeelCharts__base');

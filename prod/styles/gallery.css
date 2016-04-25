@@ -1,0 +1,16 @@
+.gallery__base {
+  box-sizing: border-box;
+  width: 66%;
+  margin: 0 2%;
+  padding: 0 25px;
+  display: inline-block;
+  margin-bottom: 100px;
+  background: lightblue;
+}
+
+.gallery__image {
+  height: auto;
+  max-height: 100%;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdhbGxlcnkuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVJLHVCQUF1QjtFQUN2QixXQUFXO0VBQ1gsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixzQkFBc0I7RUFDdEIscUJBQXFCO0VBQ3JCLHNCQUFzQjtDQUN2Qjs7QUFUSDtFQWVJLGFBQWE7RUFDYixpQkFBaUI7Q0FDbEIiLCJmaWxlIjoiZ2FsbGVyeS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZ2FsbGVyeSB7XG4gICZfX2Jhc2Uge1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgd2lkdGg6IDY2JTtcbiAgICBtYXJnaW46IDAgMiU7XG4gICAgcGFkZGluZzogMCAyNXB4O1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBtYXJnaW4tYm90dG9tOiAxMDBweDtcbiAgICBiYWNrZ3JvdW5kOiBsaWdodGJsdWU7XG4gIH1cblxuICAmX19jb250YWluZXIge1xuICB9XG5cbiAgJl9faW1hZ2Uge1xuICAgIGhlaWdodDogYXV0bztcbiAgICBtYXgtaGVpZ2h0OiAxMDAlO1xuICB9XG59XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */
