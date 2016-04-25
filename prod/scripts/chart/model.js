@@ -184,7 +184,11 @@ define(function() {
     ]
   }];
 
+  function getData() {
+    return data;
+  }
+
   return {
-    data : data
+    getData : getData
   }
 });

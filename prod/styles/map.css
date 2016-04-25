@@ -1,0 +1,9 @@
+.map__base {
+  box-sizing: border-box;
+  width: 26%;
+  margin: 0 2%;
+  height: 400px;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hcC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUksdUJBQXVCO0VBQ3ZCLFdBQVc7RUFDWCxhQUFhO0VBQ2IsY0FBYztFQUNkLHNCQUFzQjtDQUN2QiIsImZpbGUiOiJtYXAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hcCB7XG4gICZfX2Jhc2Uge1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgd2lkdGg6IDI2JTtcbiAgICBtYXJnaW46IDAgMiU7XG4gICAgaGVpZ2h0OiA0MDBweDtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ== */

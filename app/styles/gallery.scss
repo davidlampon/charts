@@ -1,0 +1,19 @@
+.gallery {
+  &__base {
+    box-sizing: border-box;
+    width: 66%;
+    margin: 0 2%;
+    padding: 0 25px;
+    display: inline-block;
+    margin-bottom: 100px;
+    background: lightblue;
+  }
+
+  &__container {
+  }
+
+  &__image {
+    height: auto;
+    max-height: 100%;
+  }
+}
