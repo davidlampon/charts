@@ -3,7 +3,6 @@ define(['gallery/model', 'gallery/view', 'map/controller', 'slick', 'jquery'], f
   function setModel(data) {
     model.data = JSON.parse(data);
     model.createPictureArray();
-    renderView();
   }
 
   function initGallery() {
@@ -14,10 +13,12 @@ define(['gallery/model', 'gallery/view', 'map/controller', 'slick', 'jquery'], f
       slidesToShow: 1
     });
   }
-
   function renderView() {
-    view.displayAllPictures(model.photos);
+    view.displayAllPictures(model.geolocatedPhotos);
     initGallery();
+    positionCurrentPhoto();
+    setCaptionText();
+    view.hideLoadingScreen();
   }
 
   function getData() {
@@ -34,21 +35,35 @@ define(['gallery/model', 'gallery/view', 'map/controller', 'slick', 'jquery'], f
     xhttp.send();
   }
 
+  function getCurrentSlide() {
+    return view.galleryBase.querySelector('.slick-current .gallery__image');
+  }
+
+  function positionCurrentPhoto() {
+    var photo = model.getPictureInfo(getCurrentSlide().dataset.id);
+    mapController.positionLocation(photo.location);
+  }
+
+  function setCaptionText() {
+    var photo = model.getPictureInfo(getCurrentSlide().dataset.id);
+    view.captionContainer.innerHTML = photo.title;
+  }
+
   function addEventListeners() {
     view.galleryBase.addEventListener('click', function(e) {
-      console.log(e);
-      var photo = model.getPictureInfo(e.target.dataset.id);
-      model.checkForPosition(photo.id);
+      mapController.removePreviousMarker();
+      positionCurrentPhoto();
+      setCaptionText();
     });
   }
 
   function init() {
     getData();
     addEventListeners();
-    console.log('Gallery up and running');
   }
 
   return {
-    init: init
+    init : init,
+    renderView : renderView
   }
 });

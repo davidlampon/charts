@@ -6,7 +6,7 @@ requirejs.config({
 });
 
 require(['chart/controller', 'map/controller', 'gallery/controller'], function(chart, map, gallery) {
-  chart.drawCharts();
+  // chart.drawCharts();
   map.init();
   gallery.init();
 });

@@ -2,9 +2,9 @@
 
   &__base {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 100px auto 0;
-    width: 100%;
     text-align: center;
+    float: right;
+    width: 350px;
   }
 
   &__chart {
@@ -20,21 +20,21 @@
       display: none;
     }
 
-    &--revenue {
-      .marfeelCharts--smartphone {
-        fill: #17660f;
-        color: #17660f;
-        stroke: #17660f;
+    &--total {
+      .marfeelCharts--male {
+        fill: #4D8963;
+        color: #4D8963;
+        stroke: #4D8963;
         stroke-width:1;
       }
-      .marfeelCharts--tablet {
-        fill: #5ed52d;
-        color: #5ed52d;
-        stroke: #5ed52d;
+      .marfeelCharts--female {
+        fill: #9F0251;
+        color: #9F0251;
+        stroke: #9F0251;
         stroke-width:1;
       }
       .marfeelCharts__areaFill {
-          fill: #ceecc0;
+          fill: #E0CC97;
       }
     }
 
@@ -163,15 +163,15 @@
     }
   }
 
-  &__legendTablet {
-    width: 50%;
-    float: left;
-    text-align: left;
-  }
-
-  &__legendSmartphone {
+  &__legendMale {
     width: 50%;
     margin-left: 50%;
     text-align: right;
+  }
+
+  &__legendFemale {
+    width: 50%;
+    float: left;
+    text-align: left;
   }
 }

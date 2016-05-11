@@ -1,19 +1,50 @@
 .gallery {
   &__base {
     box-sizing: border-box;
-    width: 66%;
-    margin: 0 2%;
+    width: 800px;
+    margin: 0 auto 20px;
     padding: 0 25px;
     display: inline-block;
-    margin-bottom: 100px;
-    background: lightblue;
+    position: relative;
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: orange;
+    }
   }
 
   &__container {
   }
 
+  &__overlayMask {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 30px;
+    right: 25px;
+    left: 25px;
+    overflow: hidden;
+
+    .content-is-loaded & {
+      display: block;
+    }
+  }
+
+  &__imageCaption {
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    height: 80px;
+    margin-top: 500px;
+    padding: 25px;
+    transition: margin-top 0.5s ease-in-out;
+
+    .gallery__overlayMask:hover & {
+      margin-top: 420px
+    }
+  }
+
   &__image {
-    height: auto;
+    height: 500px;
     max-height: 100%;
   }
 }

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="styles/charts.css">
   <link rel="stylesheet" href="styles/map.css">
   <link rel="stylesheet" href="styles/gallery.css">
+  <link rel="stylesheet" href="styles/loading.css">
 
   <script src="/bower_components/modernizr/modernizr.js"></script>
 
@@ -35,7 +36,37 @@
   <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <div class="gallery__base"><div class="gallery__container"></div></div><div class="map__base"></div>
+  <div class="content">
+    <div class="content__top">
+      <div class="loading__base">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+      </div>
+      <div class="gallery__base">
+        <div class="gallery__container"></div>
+        <div class="gallery__overlayMask">
+          <div class="gallery__imageCaption">
+          </div>
+        </div>
+      </div><div class="map__base"></div>
+    </div>
+    <div class="content__bottom">
+      <div class="marfeelCharts__base"></div>
+      <div class="map__info">
+        <p class="map__infoTitle">Image information:</p>
+        <ul>
+          <li>Location:<span class="map__infoLocation"></span></li>
+          <li>Country:<span class="map__infoCountry"></span></li>
+          <li>Coordinates:<span class="map__infoCoordinates"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <div class="marfeelCharts__chart marfeelCharts__chart--template">
     <div class="marfeelCharts__svgGroup">
@@ -54,26 +85,16 @@
       <p class="marfeelCharts__titleAmount"></p>
     </div>
     <div class="marfeelCharts__legend">
-      <div class="marfeelCharts__legendTablet">
-        <h3 class="marfeelCharts--tablet">Tablet</h3>
+      <div class="marfeelCharts__legendFemale">
+        <h3 class="marfeelCharts--female">Female</h3>
         <p><span class="marfeelCharts__legendPercentage"></span><span class="marfeelCharts__legendTotal"></span></p>
       </div>
-      <div class="marfeelCharts__legendSmartphone">
-        <h3 class="marfeelCharts--smartphone">Smartphone</h3>
+      <div class="marfeelCharts__legendMale">
+        <h3 class="marfeelCharts--male">Male</h3>
         <p><span class="marfeelCharts__legendPercentage"></span><span class="marfeelCharts__legendTotal"></span></p>
       </div>
     </div>
   </div>
-
-  <div class="marfeelCharts__base"></div>
-
-  <!-- <script type="text/javascript">
-    $(document).ready(function() {
-      $('.gallery__base').slick({
-        dots: true
-      });
-    });
-  </script> -->
 </body>
 
 </html>
