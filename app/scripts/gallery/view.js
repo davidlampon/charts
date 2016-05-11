@@ -1,6 +1,8 @@
 define(function() {
   var galleryBase = document.querySelector('.gallery__base');
   var galleryContainer = document.querySelector('.gallery__container');
+  var mainContainer = document.querySelector('.content');
+  var captionContainer = document.querySelector('.gallery__imageCaption');
   var docfrag = document.createDocumentFragment();
 
   function addPicture(picture) {
@@ -26,9 +28,14 @@ define(function() {
     galleryContainer.appendChild(docfrag);
   }
 
+  function hideLoadingScreen() {
+    mainContainer.classList.add('content-is-loaded');
+  }
   return {
     galleryBase: galleryBase,
     galleryContainer : galleryContainer,
-    displayAllPictures: displayAllPictures
+    displayAllPictures: displayAllPictures,
+    hideLoadingScreen : hideLoadingScreen,
+    captionContainer : captionContainer
   }
 });

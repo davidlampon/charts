@@ -1,13 +1,10 @@
-define(['chart/model', 'chart/view'], function(model, view) {
+define(['chart/view'], function(view) {
 
-  function drawCharts() {
-    var data = model.getData();
-
+  function drawCharts(data) {
+    view.cleanChart();
     for (var i = 0; i < data.length; i++) {
       view.drawChart(data[i]);
     }
-
-    console.log('Charts up and running');
   }
 
   return {

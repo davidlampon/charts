@@ -1,7 +1,9 @@
-define(['gallery/controller', 'map/controller'], function(controller, mapController) {
+define(['require', 'gallery/controller', 'map/controller'], function(require, controller, mapController) {
 
   var data = null;
   var photos = [];
+  var geolocatedPhotos = [];
+  var PHOTOS_IN_GALLEY = 5;
 
   function setPosition(id, latitude, longitude) {
     photos[id].position = {
@@ -31,6 +33,34 @@ define(['gallery/controller', 'map/controller'], function(controller, mapControl
     xhttp.send();
   }
 
+  function getImagesGeolocation(indexRef, locatedRef) {
+    var index = indexRef || 0;
+    var located = locatedRef || 0;
+
+    var url = 'https://api.flickr.com/services/rest/?api_key=77c423c90208d7e7f19bf1b48873c62f&format=json&method=flickr.photos.geo.getLocation&photo_id=' + photos[index].id + '&nojsoncallback=1';
+    var xhttp = new XMLHttpRequest();
+
+    if (located < PHOTOS_IN_GALLEY) {
+      xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          var response = JSON.parse(xhttp.responseText);
+          if (response.stat === 'ok') {
+            located += 1;
+            photos[index].location = response.photo.location;
+            geolocatedPhotos.push(photos[index]);
+          }
+          getImagesGeolocation(index+1, located);
+        }
+      };
+
+      xhttp.open("GET", url, true);
+      xhttp.send();
+    } else {
+      // circular dependency - async module load
+      require('gallery/controller').renderView();
+    }
+  }
+
   function createPictureArray() {
     var rawPhotos = this.data.photos.photo;
     var photoLink = null;
@@ -44,8 +74,8 @@ define(['gallery/controller', 'map/controller'], function(controller, mapControl
         owner: rawPhotos[i].owner,
         title: rawPhotos[i].title
       };
-      //checkForPosition(rawPhotos[i].id, i);
     }
+    getImagesGeolocation();
   }
 
   function getPictureInfo(id) {
@@ -57,8 +87,8 @@ define(['gallery/controller', 'map/controller'], function(controller, mapControl
   return {
     data: data,
     photos: photos,
+    geolocatedPhotos : geolocatedPhotos,
     createPictureArray: createPictureArray,
-    getPictureInfo: getPictureInfo,
-    checkForPosition: checkForPosition
+    getPictureInfo: getPictureInfo
   }
 });
