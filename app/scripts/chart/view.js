@@ -1,11 +1,11 @@
 define(['common', 'vendor/d3'], function(common, d3) {
 
   function getBaseContainer() {
-    return document.querySelector('.marfeelCharts__base');
+    return document.querySelector('.charts__base');
   }
 
   function getTemplate() {
-    return document.querySelector('.marfeelCharts__chart--template');
+    return document.querySelector('.charts__chart--template');
   }
 
   function drawDonut(model) {
@@ -24,8 +24,8 @@ define(['common', 'vendor/d3'], function(common, d3) {
         return d.count;
       });
 
-    var svg = d3.select('.marfeelCharts__chart--' + model.title)
-      .select('.marfeelCharts__donut')
+    var svg = d3.select('.charts__chart--' + model.title)
+      .select('.charts__donut')
       .append('g')
       .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
 
@@ -37,7 +37,7 @@ define(['common', 'vendor/d3'], function(common, d3) {
     g.append('path')
       .attr('d', arc)
       .attr('class', function(d) {
-        return 'marfeelCharts--' + d.data.label;
+        return 'charts--' + d.data.label;
       });
   }
 
@@ -78,8 +78,8 @@ define(['common', 'vendor/d3'], function(common, d3) {
         return y(d.total);
       });
 
-    var svg = d3.select('.marfeelCharts__chart--' + model.title)
-      .select('.marfeelCharts__area')
+    var svg = d3.select('.charts__chart--' + model.title)
+      .select('.charts__area')
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
       .append('g')
@@ -99,7 +99,7 @@ define(['common', 'vendor/d3'], function(common, d3) {
 
     svg.append('path')
       .datum(data)
-      .attr('class', 'marfeelCharts__areaFill')
+      .attr('class', 'charts__areaFill')
       .attr('d', area);
   }
 
@@ -108,22 +108,22 @@ define(['common', 'vendor/d3'], function(common, d3) {
 
     for (var i = 0; i < model.values.length; i++) {
       if (model.values[i].label === 'male') {
-        legend = templateNode.querySelector('.marfeelCharts__legendMale');
+        legend = templateNode.querySelector('.charts__legendMale');
       } else {
-        legend = templateNode.querySelector('.marfeelCharts__legendFemale');
+        legend = templateNode.querySelector('.charts__legendFemale');
       }
 
-      legend.querySelector('.marfeelCharts__legendPercentage').textContent = (model.values[i].count * 100).toFixed(2);
-      legend.querySelector('.marfeelCharts__legendTotal').textContent = common.numberFormat(model.total * model.values[i].count);
+      legend.querySelector('.charts__legendPercentage').textContent = (model.values[i].count * 100).toFixed(2);
+      legend.querySelector('.charts__legendTotal').textContent = common.numberFormat(model.total * model.values[i].count);
     }
   }
 
   function drawChart(data) {
     var templateNode = document.importNode(getTemplate(), true);
-    templateNode.classList.remove('marfeelCharts__chart--template');
-    templateNode.classList.add('marfeelCharts__chart--' + data.title);
-    templateNode.querySelector('.marfeelCharts__titleName').textContent = data.title;
-    templateNode.querySelector('.marfeelCharts__titleAmount').textContent = common.numberFormat(data.total);
+    templateNode.classList.remove('charts__chart--template');
+    templateNode.classList.add('charts__chart--' + data.title);
+    templateNode.querySelector('.charts__titleName').textContent = data.title;
+    templateNode.querySelector('.charts__titleAmount').textContent = common.numberFormat(data.total);
     setLegend(templateNode, data);
     getBaseContainer().appendChild(templateNode);
     drawDonut(data);
