@@ -16,7 +16,7 @@ Marfeel Javascript Test (JS / Frontend Development)
 To check the project development environment:
 
 ```
-git clone git@github.com:davidlampon/marfeel-charts.git
+git clone git@github.com:davidlampon/charts.git
 cd marfeel-charts
 npm install
 bower install

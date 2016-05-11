@@ -8,6 +8,6 @@ define(['chart/view'], function(view) {
   }
 
   return {
-    drawCharts : drawCharts
+    drawCharts : drawCharts 
   }
 });
