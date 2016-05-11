@@ -1,4 +1,6 @@
-define(function() {
+define(['chart/controller'], function(controller) {
+  var population = [];
+
   var data = [{
     title: 'revenue',
     total: 200000,
@@ -188,7 +190,55 @@ define(function() {
     return data;
   }
 
+  function setModel(data) {
+    var males = 0;
+    var females = 0;
+    var total = 0;
+
+    for (var i = 0; i < data.length; i++) {
+      males += data[i].males;
+      females += data[i].females;
+      total += data[i].total;
+    }
+
+    var totalChart = {
+      title: 'total',
+      total: total,
+      values: [{
+        label: 'male',
+        count: males / total
+      }, {
+        label: 'female',
+        count: females / total
+      }],
+      evolution: data
+    };
+
+    population[0] = totalChart;
+
+    controller.drawCharts(population);
+  }
+
+  function loadInfo(country) {
+    var url = 'http://api.population.io/1.0/population/2015/' + country.replace(/ /g,"%20");;
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var response = JSON.parse(xhttp.responseText);
+
+        if (response.length) {
+          setModel(response);
+        }
+      }
+    };
+
+    xhttp.open("GET", url, true);
+    xhttp.send();
+  }
+
   return {
-    getData : getData
+    getData : getData,
+    loadInfo : loadInfo
   }
 });

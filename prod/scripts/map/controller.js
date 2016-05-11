@@ -1,6 +1,7 @@
-define(['map/model', 'map/view'], function(model, view) {
+define(['map/model', 'map/view', 'chart/model'], function(model, view, chartModel) {
 
   var map;
+  var marker;
 
   var options = {
     enableHighAccuracy: true,
@@ -23,7 +24,7 @@ define(['map/model', 'map/view'], function(model, view) {
   }
 
   function init() {
-    getUserLocation();
+    // getUserLocation();
     map = new google.maps.Map(document.querySelector('.map__base'), {
       center: {
         lat: -34.397,
@@ -31,13 +32,20 @@ define(['map/model', 'map/view'], function(model, view) {
       },
       zoom: 7
     });
+  }
 
-    console.log('Map up and running');
+  function getFormattedAdresses(results, position) {
+    var addresses = [];
+
+    for (var i = 0; i < results.length; i += 1) {
+      addresses[i] = results[i].formatted_address;
+    };
+
+    view.printInfo(addresses, position);
+    chartModel.loadInfo(addresses[addresses.length-1]);
   }
 
   function positionLocation(position) {
-    console.log(position);
-
     marker = new google.maps.Marker({
       map: map,
       draggable: false,
@@ -49,12 +57,35 @@ define(['map/model', 'map/view'], function(model, view) {
     });
 
     map.panTo(marker.getPosition());
+    getCountry(position);
   }
 
-  // getBrowserCoordinates
+  function removePreviousMarker() {
+    marker.setMap(null);
+  }
+
+  function getCountry(position) {
+    var key = 'AIzaSyA-LeD-hgffpgVXyL_3o9y8pwOKMcaocKI';
+    var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + position.latitude + ',' + position.longitude + '&key=' + key + '&language=en';
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var response = JSON.parse(xhttp.responseText);
+
+        if (response.status === 'OK') {
+          getFormattedAdresses(response.results, position);
+        }
+      }
+    };
+
+    xhttp.open("GET", url, true);
+    xhttp.send();
+  }
 
   return {
     init: init,
-    positionLocation: positionLocation
+    positionLocation: positionLocation,
+    removePreviousMarker : removePreviousMarker
   }
 });
