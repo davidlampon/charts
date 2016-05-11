@@ -53,7 +53,7 @@ define(['common', 'vendor/d3'], function(common, d3) {
       width = 150 - margin.left - margin.right,
       height = 60 - margin.top - margin.bottom;
 
-    var parseDate = d3.time.format('%d-%b-%y').parse;
+    // var parseDate = d3.time.format('%d-%b-%y').parse;
 
     var x = d3.time.scale()
       .range([0, width]);
@@ -71,11 +71,11 @@ define(['common', 'vendor/d3'], function(common, d3) {
 
     var area = d3.svg.area()
       .x(function(d) {
-        return x(d.date);
+        return x(d.age);
       })
       .y0(height)
       .y1(function(d) {
-        return y(d.close);
+        return y(d.total);
       });
 
     var svg = d3.select('.marfeelCharts__chart--' + model.title)
@@ -86,15 +86,15 @@ define(['common', 'vendor/d3'], function(common, d3) {
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     data.forEach(function(d) {
-      d.date = parseDate(d.date);
-      d.close = +d.close;
+      d.age = d.age;
+      d.total = d.total;
     });
 
     x.domain(d3.extent(data, function(d) {
-      return d.date;
+      return d.age;
     }));
     y.domain([0, d3.max(data, function(d) {
-      return d.close;
+      return d.total;
     })]);
 
     svg.append('path')
@@ -107,13 +107,13 @@ define(['common', 'vendor/d3'], function(common, d3) {
     var legend;
 
     for (var i = 0; i < model.values.length; i++) {
-      if (model.values[i].label === 'smartphone') {
-        legend = templateNode.querySelector('.marfeelCharts__legendSmartphone');
+      if (model.values[i].label === 'male') {
+        legend = templateNode.querySelector('.marfeelCharts__legendMale');
       } else {
-        legend = templateNode.querySelector('.marfeelCharts__legendTablet');
+        legend = templateNode.querySelector('.marfeelCharts__legendFemale');
       }
 
-      legend.querySelector('.marfeelCharts__legendPercentage').textContent = model.values[i].count * 100;
+      legend.querySelector('.marfeelCharts__legendPercentage').textContent = (model.values[i].count * 100).toFixed(2);
       legend.querySelector('.marfeelCharts__legendTotal').textContent = common.numberFormat(model.total * model.values[i].count);
     }
   }
@@ -130,7 +130,12 @@ define(['common', 'vendor/d3'], function(common, d3) {
     drawArea(data);
   }
 
+  function cleanChart() {
+      getBaseContainer().innerHTML = '';
+  }
+
   return {
-      drawChart : drawChart
+      drawChart : drawChart,
+      cleanChart : cleanChart
   }
 });
