@@ -2,9 +2,9 @@
 
 This project is an intentional effort in getting to know how MVC works, RequireJS as module loader, D3.js for graphic generation and several chained API connections.
 
-![Image of Charts](https://raw.githubusercontent.com/davidlampon/charts/master/img/charts.png)
-
 Online version: http://davidlampon.github.io/charts/prod/index.html
+
+![Image of Charts](https://raw.githubusercontent.com/davidlampon/charts/master/img/charts.png)
 
 ###Setup, installation and deploy:
 Download repo:
