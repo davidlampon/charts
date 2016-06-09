@@ -36,7 +36,7 @@ npm start
 
 ###Presentation
 
-This exercise has been developed with Atom on Chrome and the result has been tested on Firefox and Internet Explorer 11. This exercise has been developed in an approximate time of 12-14 hours. 
+This exercise has been developed with Atom on Chrome and the result has been tested on Firefox and Internet Explorer 11 in an approximate time of 12-14 hours. 
 
 Time used (approximate times)
 
@@ -58,8 +58,10 @@ Total invested time: 12-14 hours
 
 ###Development process
 
-- I faced the option of developing raw code or using a Yeoman generator for a Frontend application. As I'm used to the gulp tasks, sass compilation and browser auto reload I preferred this approach although I knew it would be more work to setup. Folder structure is the generally accepted although the distribution folder is not present on the repository.
-- Yeoman generator sets up the html5 boilerplate and I've tried to present the code in the more logical, clear and readable way. BEM naming conventions have been used to make the reading of the style sheet straightforward.
+- I faced the option of developing raw code or using a Yeoman generator for a Frontend application. As I'm used to the gulp tasks, sass compilation and browser auto reload I preferred this approach although I knew it would be more work to setup. 
+- Folder structure is the generally accepted although the distribution folder is not present on the repository.
+- Yeoman generator sets up the html5 boilerplate and I've tried to present the code in the more logical, clear and readable way. 
+- BEM naming conventions have been used to make the reading of the style sheet straightforward.
 - The view loads an html chunk as a template that is hidden by a class that we remove, customize with the data model from API calls and insert in the base container. 
 - D3.js and Slick as dependencies with RequireJS
 - No additional libraries or frameworks have been used although it was taken in account handlebars / moustache.
